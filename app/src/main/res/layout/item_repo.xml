@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="repoDetail"
+            type="com.bitflyer.github.client.ui.dto.RepoDetail" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/fab_margin">
+
+        <TextView
+            android:id="@+id/repository_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="@{repoDetail.name}"
+            app:layout_constraintBottom_toTopOf="@id/repository_language"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Repository Name" />
+
+        <TextView
+            android:id="@+id/repository_language"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="@{repoDetail.language}"
+            app:layout_constraintBottom_toTopOf="@id/repository_description"
+            app:layout_constraintEnd_toStartOf="@id/repository_start_count"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            tools:text="Language" />
+
+        <TextView
+            android:id="@+id/repository_start_count"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="@{@string/github_repository_stars(repoDetail.stargazersCount)}"
+            app:layout_constraintBottom_toTopOf="@id/repository_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/repository_language"
+            app:layout_constraintTop_toBottomOf="@id/repository_name"
+            tools:text="Start Count" />
+
+        <TextView
+            android:id="@+id/repository_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="@{repoDetail.description}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/repository_language"
+            tools:text="Description" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

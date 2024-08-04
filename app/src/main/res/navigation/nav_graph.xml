@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/UserListFragment">
+
+    <fragment
+        android:id="@+id/UserListFragment"
+        android:name="com.bitflyer.github.client.ui.user.list.UserListFragment"
+        android:label="@string/github_user_list"
+        tools:layout="@layout/fragment_user_list">
+
+        <action
+            android:id="@+id/action_user_list_to_user_detail"
+            app:destination="@id/UserDetailFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/UserDetailFragment"
+        android:name="com.bitflyer.github.client.ui.user.detail.UserDetailFragment"
+        android:label="@string/github_user_detail"
+        tools:layout="@layout/fragment_user_detail">
+
+        <action
+            android:id="@+id/action_user_detail_to_user_list"
+            app:destination="@id/UserListFragment" />
+
+    </fragment>
+</navigation>

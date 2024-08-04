@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Github Client</string>
+    <string name="github_user_list">Github User List</string>
+    <string name="github_user_detail">Github User Detail</string>
+    <string name="github_search_user">Search Github User</string>
+    <string name="github_user_followers">Followers: %d</string>
+    <string name="github_user_following">Following: %d</string>
+    <string name="github_repository_stars">Starred: %d</string>
+</resources>

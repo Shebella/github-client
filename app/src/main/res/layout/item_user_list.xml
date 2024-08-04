@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="user"
+            type="com.bitflyer.github.client.data.model.User" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/fab_margin">
+
+        <ImageView
+            android:id="@+id/avatar_url"
+            android:layout_width="@dimen/image_size"
+            android:layout_height="@dimen/image_size"
+            app:imageUrl="@{user.avatar_url}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/login"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/login"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/image_size"
+            android:gravity="center_vertical"
+            android:padding="@dimen/fab_margin"
+            android:text="@{user.login}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/avatar_url"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Github User" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
